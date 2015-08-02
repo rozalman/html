@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>
+			Hangman
+		</title>
+	</head>
+	
+<body>
+	<h1>HangMan</h1>
+	<script>
+		var words=["elephant","donkey","horse","monkey","giraffe","crocodile","duyung","shark","white shark"];
+		var word=words[Math.floor(Math.random()*words.length)];
+		
+		
+		//display answer field
+		answerArray=[];
+		for(var i=0;i<word.length;i++){
+			answerArray[i]="-";
+			
+		}
+		var remainingLetter=word.length;
+		var guesses=20;
+		while(remainingLetter>0 && guesses >0){
+			alert(answerArray.join(" "));
+			
+			
+			var guess=prompt("Cuba Teka Binatang Apa Di Dalam ini :: Click cancel Jika tak Mau berhenti").toLowerCase();
+			
+			if(guess===null){
+				break;
+			}
+			else if(guess.length!==1){
+				alert("Masukan Satu Huruf Sahaja");
+			}
+			
+			else{
+				guesses--;
+				for(var j=0;j<word.length;j++){
+				if(word[j]===guess && answerArray[j]==="-"){
+					answerArray[j]=guess;
+					remainingLetter--;
+					}
+				}
+			}
+		}
+		
+		alert(answerArray.join(""));
+		if(guesses>0){
+		alert("Binatang yang anda cari ialah:"+word);
+		}else{
+			alert(""+word);
+		}
+	</script>
+</body>
+</html>
