@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index,follow" />
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script>
+		var calc=function (){
+			var income=document.getElementById("income").value*4;
+			alert("Your cane afford your house "+income);
+			
+		}
+		var findHouse=function(form){
+		var bedroom=document.getElementById("bedroom").value;
+		var zipcode=document.getElementById("zipcode").value;
+			form.submit();
+		}
+		
+		 var validateNumber=function(value){
+			if(isNaN(value) || value===""){
+				alert("Not valid number ");
+				
+			}
+		}
+		
+		var validateZipcode=function (value){
+			if(isNaN(value) || value===""){
+				alert("Not valid zipcode XXXXX ");
+			}
+		
+		}
+		var time=10;
+		var mouserover=function(){
+		
+			document.getElementById("img").src="image/banner4.gif";
+			
+			//
+			time=time-1;
+		
+			if(time===0){
+				alert("letupan "+time+" .");
+				clearInterval(intervalId);
+			}
+			
+			
+		}
+		var intervalId=setInterval(mouserover,100);
+		
+			
+		
+	
+		
+	</script>
+</head>
+
+<body>
+<h1>Ready To Find House</h1>
+<form name="myForm" method="post" action="-">
+<label for="income">Enter your annual income</label>
+<input type="text" name="" id="income" onblur="validateNumber(this.value)" ><span id="msg"><span></br>
+
+<label for="bedroom">Enter the number of your bedroom</label>
+<input type="text" name="" id="bedroom" onblur="validateNumber(this.value)"></br>
+<label for="zipcode">Enter your Zip code</label>
+<input type="" name="" id="zipcode" onblur="validateZipcode(this.value)"></br>
+<input type="submit" name="" id="" value="Calculate Price" onclick="calc()">
+<input type="submit" name="" id="" value="Shop for House" onclick="findHouse(this.form)">
+</form>
+<div id="wrapper">
+<img id="img" src="image/banner4.gif" alt="Banner" onmouseover="mouserover()">
+</div>
+
+</body>
+</html>
