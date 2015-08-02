@@ -1,0 +1,41 @@
+body{
+
+background-color:white;
+font-family:san-serif;
+
+}
+
+#container{
+width:1000px;
+margin:10px auto;
+margin-left:250px;
+border:2px solid #0088dd;
+}
+#content{
+width:750px;
+margin-top:30px;
+margin-left:30px;
+border:2px solid #0088dd;
+}
+#column-left{
+	width:250px;
+	height:100px;
+	margin-top:30px;
+	border:2px solid #0088dd;
+}
+.img-head{
+	width:750px;
+	height:150px;
+}
+ 
+li{
+list-style:none;
+float:left;
+display:inline;
+margin:5px;
+}
+
+
+.clear{
+clear:both;
+}
